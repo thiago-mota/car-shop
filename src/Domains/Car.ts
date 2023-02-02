@@ -1,7 +1,7 @@
 import ICar from '../Interfaces/ICar';
 
 class Car {
-  public id: string;
+  public id?: string;
   public model: string;
   public year: number;
   public color: string;
