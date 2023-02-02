@@ -5,7 +5,7 @@ class Car {
   public model: string;
   public year: number;
   public color: string;
-  public status: boolean;
+  public status?: boolean;
   public buyValue: number;
   private doorsQty: number;
   private seatsQty: number;
