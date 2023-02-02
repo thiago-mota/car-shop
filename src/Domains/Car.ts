@@ -1,12 +1,12 @@
 import ICar from '../Interfaces/ICar';
 
 class Car {
-  public id?: string;
-  public model: string;
-  public year: number;
-  public color: string;
-  public status?: boolean;
-  public buyValue: number;
+  protected id?: string;
+  protected model: string;
+  protected year: number;
+  protected color: string;
+  protected status?: boolean;
+  protected buyValue: number;
   private doorsQty: number;
   private seatsQty: number;
 
