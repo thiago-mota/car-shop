@@ -20,7 +20,7 @@ class CarController {
       model: this.request.body.model,
       year: this.request.body.year,
       color: this.request.body.color,
-      status: this.request.body.status,
+      status: this.request.body.status || false,
       buyValue: this.request.body.buyValue,
       doorsQty: this.request.body.doorsQty,
       seatsQty: this.request.body.seatsQty,
