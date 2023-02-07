@@ -11,5 +11,8 @@ carRoute.get('/:id', (request, response, next) => new CarController(request, res
 
 carRoute.get('/', (request, response, next) => new CarController(request, response, next)
   .findAllCars());
+
+carRoute.put('/:id', (request, response, next) => new CarController(request, response, next)
+  .updateCar());
   
 export default carRoute;
