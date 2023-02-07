@@ -21,8 +21,13 @@ class CarService {
   public async findAll() {
     const carODM = new CarODM();
     const allCars = await carODM.findAll();
-    console.log(allCars);
     return allCars;
+  }
+
+  public async findById(id: string) {
+    const carODM = new CarODM();
+    const carById = await carODM.findById(id);
+    return this.createCarDomain(carById);
   }
 }
 
