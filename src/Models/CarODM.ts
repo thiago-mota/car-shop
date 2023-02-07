@@ -34,6 +34,11 @@ class CarODM {
     const allCars = await this.model.find();
     return allCars;
   }
+
+  public async findById(id: string) {
+    const findById = await this.model.findById(id);
+    return findById;
+  }
 }
 
 export default CarODM;
