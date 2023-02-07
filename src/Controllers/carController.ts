@@ -51,7 +51,26 @@ class CarController {
     if (!carById) return this.response.status(404).json({ message: 'Car not found' });
     // 24 coz its 12-byte value represented as 24 character hex string
     
-    return this.response.status(200).json(carById);
+    return this.response
+      .status(200)
+      .json(carById);
+  }
+
+  public async updateCar() {
+    const { id } = this.request.params;
+    if (id.length !== 24) return this.response.status(422).json({ message: 'Invalid mongo id' });
+    
+    const findCar = await this.service.findById(id);
+    if (!findCar) return this.response.status(404).json({ message: 'Car not found' });
+    
+    const car = this.request.body;
+    await this.service.updateCar(id, car);
+    
+    const { model, year, color, status, buyValue, doorsQty, seatsQty } = car;
+    
+    return this.response
+      .status(200)
+      .json({ id, model, year, color, status, buyValue, doorsQty, seatsQty });
   }
 }
 
