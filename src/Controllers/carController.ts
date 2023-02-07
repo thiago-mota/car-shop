@@ -42,6 +42,13 @@ class CarController {
       .status(200)
       .json(allCars);
   }
+
+  public async findCarById() {
+    const { id } = this.request.params;
+    const carById = await this.service.findById(id);
+    
+    return this.response.status(200).json(carById);
+  }
 }
 
 export default CarController;
