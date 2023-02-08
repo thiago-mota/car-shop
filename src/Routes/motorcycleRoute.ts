@@ -8,5 +8,7 @@ motorcycleRoute.post('/', (req, res, next) => new MotorcycleController(req, res,
 
 motorcycleRoute.get('/', (req, res, next) => new MotorcycleController(req, res, next)
   .findAllMotos());
+motorcycleRoute.get('/:id', (req, res, next) => new MotorcycleController(req, res, next)
+  .findMotoById());
 
 export default motorcycleRoute;
