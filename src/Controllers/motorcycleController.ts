@@ -38,6 +38,19 @@ class MotorcycleController {
       .status(200)
       .json(allMotos);
   }
+
+  public async findMotoById() {
+    const { id } = this.request.params;
+    if (id.length !== 24) return this.response.status(422).json({ message: 'Invalid mongo id' });
+
+    const motoById = await this.service.findById(id);
+    if (!motoById) return this.response.status(404).json({ message: 'Motorcycle not found' });
+    // 24 coz its 12-byte value represented as 24 character hex string
+    
+    return this.response
+      .status(200)
+      .json(motoById);
+  }
 }
 
 export default MotorcycleController;
