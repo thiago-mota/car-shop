@@ -5,6 +5,8 @@ import CarService from '../../../src/Services/carService';
 import { carsArray, validCarWithId, validCar } from '../../Mocks/CarMock';
 
 describe('Testando a camada Service de Cars', function () {
+  beforeEach(sinon.restore);
+
   it('Deve listar todos os carros registrados', async function () {
     sinon.stub(Model, 'find').resolves(carsArray);
 
@@ -32,13 +34,12 @@ describe('Testando a camada Service de Cars', function () {
     expect(result).to.be.deep.equal(validCarWithId);
   });
 
-  // it('Deve atualizar um carro específico', async function () {
-  //   sinon.stub(Model, 'findOne').resolves(validCarWithId);
+  it('Deve retornar null se falhar em criar um carro', async function () {
+    sinon.stub(Model, 'create').resolves(null);
 
-  //   const updateCar = new CarService();
-  //   const result = await updateCar.updateCar('63e28260030bbd2db138c508', validCar);
-  //   //  TypeError: updatedCar.save is not a function
+    const addCar = new CarService();
+    const result = await addCar.addsNewCar(validCar);
 
-  //   expect(result).to.be.deep.equal(validCarWithId);
-  // });
+    expect(result).to.be.deep.equal(null);
+  });
 });
