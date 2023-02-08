@@ -31,6 +31,13 @@ class MotorcycleController {
       .status(201)
       .json(newMoto);
   }
+
+  public async findAllMotos() {
+    const allMotos = await this.service.findAll();
+    return this.response
+      .status(200)
+      .json(allMotos);
+  }
 }
 
 export default MotorcycleController;
