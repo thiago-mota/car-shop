@@ -41,22 +41,8 @@ class CarODM {
   }
 
   public async updateById(id: string, car: ICar) {
-    const updatedCar = await this.model.findOne({ where: { id } });
-    // console.log('log do odm --->', updatedCar);
-
-    if (updatedCar) {
-      updatedCar.id = car.id;
-      updatedCar.model = car.model;
-      updatedCar.year = car.year;
-      updatedCar.color = car.color;
-      updatedCar.status = car.status;
-      updatedCar.buyValue = car.buyValue;
-      updatedCar.doorsQty = car.doorsQty;
-      updatedCar.seatsQty = car.seatsQty;
-      await updatedCar.save();
-      // console.log(updatedCar);
-      return updatedCar;
-    }
+    const updatedCar = await this.model.updateOne({ _id: id }, car);
+    return updatedCar;
   }
 }
 
