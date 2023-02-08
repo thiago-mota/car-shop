@@ -17,6 +17,13 @@ class MotorcycleService {
 
     return this.createMotorcycleDomain(newMoto);
   }
+
+  public async findAll() {
+    const motoODM = new MotorcycleODM();
+    const allMotos = await motoODM.findAll();
+    const findAllMotos = allMotos.map((moto) => this.createMotorcycleDomain(moto));
+    return findAllMotos;
+  }
 }
 
 export default MotorcycleService;
