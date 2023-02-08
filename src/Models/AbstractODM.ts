@@ -6,6 +6,7 @@ import {
 } from 'mongoose';
 
 import ICar from '../Interfaces/ICar';
+import IMotorcycle from '../Interfaces/IMotorcycle';
 
 class AbstractODM<T> {
   protected schema: Schema;
@@ -32,8 +33,8 @@ class AbstractODM<T> {
     return findById;
   }
 
-  public async updateById(id: string, car: ICar) {
-    const updatedCar = await this.model.updateOne({ _id: id }, car);
+  public async updateById(id: string, vehicle: ICar | IMotorcycle) {
+    const updatedCar = await this.model.updateOne({ _id: id }, vehicle);
     return updatedCar;
   }
 }
