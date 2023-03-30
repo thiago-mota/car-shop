@@ -1,13 +1,64 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+## Sobre o projeto
+O projeto consiste na criação de uma API com `CRUD`* , desenvolvida em TypeScript aplicando princípios de Programação Orientada a Objetos, para gerenciar veículos de uma concessionária.
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+Para o banco de dados foi utilizado `MongoDB` e seu framework `Mongoose`.
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+## Funcionalidades implementadas
+* Endpoint para cadastramento de carros, acessíveis pela rota ```/cars```;
+* Endpoint para listagem de veículos, acessíveis pela rota ```/cars``` e ```cars/:id```;
+* Endpoint para atualização de um carro, acessível pela rota ```cars/:id```;
+* Endpoint para cadastramento de motos, acessíveis pela rota ```/motorcycles;
+* Endpoint para listagem de motos, acessíveis pela rota ```/motorcycles``` e ```motorcycles/:id```;
+* Endpoint para atualização de um carro, acessível pela rota ```motorcycles/:id```;
+* Testes para as camadas services de carros e motos.
+
+## Tecnologias utilizadas
+* Node.Js;
+* TypeScript;
+* MongoDB;
+* Mongoose;
+* Sinon;
+* Chai.
+
+## Arquivos desenvolvidos
+Todos os arquivos que foram desenvolvidos por mim podem ser encontrados na seguinte estrutura:
+
+```
+├── src
+│   ├── Controllers
+│   │   ├── carController.ts
+│   │   └── motorcycleController.ts
+│   ├── Domains
+│   │   ├── Car.ts
+│   │   ├── Motorcycle.ts
+│   │   └── Vehicle.ts
+│   ├── Interfaces
+│   │   ├── ICar.ts
+│   │   ├── IMotorcycle.ts
+│   │   └── IVehicle.ts
+│   ├── Middlewares
+│   │   └── ErrorHandler.ts
+│   ├── Models
+│   │   ├── AbstractODM.ts
+│   │   ├── CarODM.ts
+│   │   ├── Connection.ts
+│   │   └── MotorcycleODM.ts
+│   ├── Routes
+│   │   ├── carRoute.ts
+│   │   ├── motorcycleRoute.ts
+│   │   └── routes.ts
+│   ├── Services
+│   │   ├── carService.ts
+│   │   └── motorcycleService.ts
+├── tests
+│   ├── Mocks
+│   │   ├── CarMock.ts
+│   │   └── MotoMock.ts
+│   ├──  unit
+│   │   ├── Services
+│   │   │ ├── carService.test.ts
+│   │   │ └── motoService.test.ts
+
+```
+
+*Funcionalidade de excluir carros e motos com base em seu ID não implementada.
