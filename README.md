@@ -7,7 +7,7 @@ Para o banco de dados foi utilizado `MongoDB` e seu framework `Mongoose`.
 * Endpoint para cadastramento de carros, acessíveis pela rota ```/cars```;
 * Endpoint para listagem de veículos, acessíveis pela rota ```/cars``` e ```cars/:id```;
 * Endpoint para atualização de um carro, acessível pela rota ```cars/:id```;
-* Endpoint para cadastramento de motos, acessíveis pela rota ```/motorcycles;
+* Endpoint para cadastramento de motos, acessíveis pela rota ```/motorcycles```;
 * Endpoint para listagem de motos, acessíveis pela rota ```/motorcycles``` e ```motorcycles/:id```;
 * Endpoint para atualização de um carro, acessível pela rota ```motorcycles/:id```;
 * Testes para as camadas services de carros e motos.
