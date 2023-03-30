@@ -21,7 +21,7 @@ Para o banco de dados foi utilizado `MongoDB` e seu framework `Mongoose`.
 * Chai.
 
 ## Arquivos desenvolvidos
-Todos os arquivos que foram desenvolvidos por mim podem ser encontrados na seguinte estrutura:
+Todos os arquivos que foram desenvolvidos podem ser encontrados na seguinte estrutura. Os demais arquivos não foram necessariamente desenvolvidos por mim, podendo ser arquivos de configurações e instalações de terceiros.
 
 ```
 ├── src
